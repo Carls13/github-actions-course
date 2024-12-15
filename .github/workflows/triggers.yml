@@ -1,4 +1,4 @@
-name: Python Hello World
+name: Utilizando diferentes triggers
 
 on:
   push:
@@ -7,7 +7,7 @@ on:
     branches: [ "main" ]
   issue_comment:
     types: [created, deleted]
-    
+
 permissions:
   contents: read
 
