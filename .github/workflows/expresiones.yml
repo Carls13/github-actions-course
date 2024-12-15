@@ -1,0 +1,31 @@
+name: Expresiones
+on: 
+  workflow_dispatch:
+    inputs:
+      posicion:
+        description: Posicion en la empresa
+        required: true
+        type: string
+      antiguedad:
+        description: Años en la empresa
+        required: true
+        type: number
+jobs:
+  desarrollador:
+    if: ${{ contains(input.posicion, 'Desarrollador') }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Detectar desarrollador
+        run: echo Usted es desarrollador 
+  nuevo:
+    if: ${{ inputs.antiguedad <= 2 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Detectar persona nueva
+        run: echo Usted no tiene mucho tiempo en la empresa
+  experimentado:
+    if: ${{ inputs.antiguedad > 2 }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Detectar persona expeimentada
+        run: echo Usted es bastante importante en la empresa
