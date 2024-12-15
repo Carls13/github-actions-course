@@ -12,7 +12,7 @@ on:
         type: number
 jobs:
   desarrollador:
-    if: ${{ contains(input.posicion, 'Desarrollador') }}
+    if: ${{ contains(inputs.posicion, 'Desarrollador') }}
     runs-on: ubuntu-latest
     steps:
       - name: Detectar desarrollador
