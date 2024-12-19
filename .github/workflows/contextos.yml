@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Informacion del trabajo
-        run: echo "El trabajo actual es ${{ job.container }}, ${{ job.name }}"
+        run: echo "El trabajo es ${{ job.container }}, ${{ github.job }}"
   runner_info:
     runs-on: ubuntu-latest
     steps:
