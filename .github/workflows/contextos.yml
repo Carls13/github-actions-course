@@ -1,0 +1,18 @@
+name: Usando Contextos
+on: [push, pull_request]
+jobs:
+  check_username:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Verificar nombre de usuario
+        run: echo "Tu nombre de usuario es ${{ github.actor }}"
+  job_info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Informacion del trabajo
+        run: echo "El trabajo actual es ${{ job.container }}, ${{ job.name }}"
+  runner_info:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Informacion del corredor
+        run: echo "El corredor actual es ${{ runner.os }}, ${{ runner.name }}"
