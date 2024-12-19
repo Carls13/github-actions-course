@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Obtener secretos del repositorio
-        run: echo Hola ${{ secrets.NOMBRE }}, desplegando aplicación a ${{ secrets.APP_URL }}
+        run: echo "Hola ${{ secrets.NOMBRE }}, desplegando aplicación a ${{ secrets.APP_URL }}!"
   reading_workflow_env_vars:
     runs-on: ubuntu-latest
     env:
