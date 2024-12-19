@@ -1,0 +1,21 @@
+name: Usando Variables
+on: [push, pull_request, pull_request_review]
+jobs:
+  getting_repository_secrets:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener secretos del repositorio
+        run: echo Hola ${{ secrets.NOMBRE }}, desplegando aplicación a ${{ secrets.APP_URL }}
+  reading_workflow_env_vars:
+    runs-on: ubuntu-latest
+    env:
+      APP_USERNAME: Carls13
+      APP_PASSWORD: 123456
+    steps:
+      - name: Leer variables de entorno del flujo de trabajo
+        run: echo "Tu nombre de usuario es ${{ env.APP_USERNAME }} y tu contraseña es ${{ env.APP_PASSWORD }}"
+      - name: Leer variables de entorno de este step en concreto
+        env:
+          APP_USERNAME: "Carlos"
+          APP_PASSWORD: "654321"
+        run: echo "Tu nombre de usuario es ${{ env.APP_USERNAME }} y tu contraseña es ${{ env.APP_PASSWORD }}"
