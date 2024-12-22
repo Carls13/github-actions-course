@@ -1,11 +1,11 @@
 name: Usando Variables
 on: [push, pull_request, pull_request_review]
 jobs:
-  getting_repository_secrets:
+  getting_repository_vars:
     runs-on: ubuntu-latest
     steps:
       - name: Obtener secretos del repositorio
-        run: echo "Hola ${{ secrets.NOMBRE }}, desplegando aplicación a ${{ secrets.APP_URL }}!"
+        run: echo "Hola ${{ vars.NOMBRE }}, desplegando aplicación a ${{ vars.APP_URL }}!"
   reading_workflow_env_vars:
     runs-on: ubuntu-latest
     env:
